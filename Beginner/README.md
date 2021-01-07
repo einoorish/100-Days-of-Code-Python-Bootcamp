@@ -6,4 +6,5 @@ Day 5 - Python Loops\
 Day 6 - Python Functions & Karel\
 Day 8 - Function Parameters\
 Day 9 - Dictionaries, Nesting\
-Day 10 - Functions with Outputs, Recursion
+Day 10 - Functions with Outputs, Recursion\
+Day 12 - Scope, Constants
