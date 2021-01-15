@@ -5,8 +5,7 @@ e.g. “latte”
 - **cost** 
 (float) The price of the drink.
 e.g 1.5
-- **ingredients** 
-(dictionary) The ingredients and amounts required to make the drink. 
+- **ingredients(dictionary)** The ingredients and amounts required to make the drink. 
 e.g. {“water”: 100, “coffee”: 16}
 
 ### Menu Class
