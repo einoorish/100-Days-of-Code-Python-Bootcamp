@@ -1,68 +1,45 @@
 from turtle import Turtle, Screen
-from time import sleep
-
 MOVE_DISTANCE = 20
 
-class Snake :
+class Snake:
 
-  def __init__(self):
-    self.snake = []  
-    self.add_initial_segments()
-    
+    def __init__(self):
+        self.segments = []
+        self.add_initial_segments()
 
-  def add_initial_segments(self):
-    for i in range(0, 3) :
-      segment = Turtle()
-      segment.shape("square")
-      segment.color("white")
-      segment.penup()
-      segment.goto(-20*i, 0)
-      
-      self.snake.append(segment)
+    def add_initial_segments(self):
+        for i in range(0, 3):
+            self.add_segment(position=(-20 * i, 0))
 
-  def move(self):
-      for seg_num in range(len(self.snake)-1, 0, -1):
-        new_x = self.snake[seg_num-1].xcor()
-        new_y = self.snake[seg_num-1].ycor()
-        self.snake[seg_num].goto(new_x, new_y)
+    def add_segment(self, position):
+        segment = Turtle()
+        segment.shape("square")
+        segment.color("white")
+        segment.penup()
+        segment.goto(position)
 
-      self.snake[0].forward(MOVE_DISTANCE)
+        self.segments.append(segment)
 
-  def turn_up(self):
-    self.snake[0].setheading(90)
+    def extend(self):
+        self.add_segment(self.segments[-1].position())
 
-  def turn_down(self):
-    self.snake[0].setheading(270)
-  
-  def turn_right(self):
-    self.snake[0].setheading(0)
+    def move(self):
+        for seg_num in range(len(self.segments) - 1, 0, -1):
+            new_x = self.segments[seg_num - 1].xcor()
+            new_y = self.segments[seg_num - 1].ycor()
+            self.segments[seg_num].goto(new_x, new_y)
 
-  def turn_left(self):
-    self.snake[0].setheading(180)
+        self.segments[0].forward(MOVE_DISTANCE)
+        self.head = self.segments[0]
 
+    def turn_up(self):
+        self.segments[0].setheading(90)
 
+    def turn_down(self):
+        self.segments[0].setheading(270)
 
-screen = Screen()
-screen.setup(width=500, height=500)
-screen.bgcolor("black")
-screen.tracer(0) # to remove animation
-#screen.title("Snake Game")
+    def turn_right(self):
+        self.segments[0].setheading(0)
 
-snake = Snake()
-
-screen.listen()
-screen.onkey(snake.turn_up, "Up")
-screen.onkey(snake.turn_down, "Down")
-screen.onkey(snake.turn_left, "Left")
-screen.onkey(snake.turn_right, "Right")
-
-game_is_on = True
-
-while game_is_on:
-  sleep(0.1)  #to slower the snake
-  snake.move()
-
-  screen.update()
-
-
-screen.exitonclick()
+    def turn_left(self):
+        self.segments[0].setheading(180)
