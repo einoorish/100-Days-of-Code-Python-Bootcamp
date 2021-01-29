@@ -1,11 +1,13 @@
 from turtle import Turtle, Screen
 MOVE_DISTANCE = 20
 
+
 class Snake:
 
     def __init__(self):
         self.segments = []
         self.add_initial_segments()
+        self.head = self.segments[0]
 
     def add_initial_segments(self):
         for i in range(0, 3):
@@ -30,7 +32,6 @@ class Snake:
             self.segments[seg_num].goto(new_x, new_y)
 
         self.segments[0].forward(MOVE_DISTANCE)
-        self.head = self.segments[0]
 
     def turn_up(self):
         self.segments[0].setheading(90)
@@ -43,3 +44,10 @@ class Snake:
 
     def turn_left(self):
         self.segments[0].setheading(180)
+
+    def reset(self):
+        for segment in self.segments:
+            segment.goto(1000,1000)
+        self.segments.clear()
+        self.add_initial_segments()
+        self.head = self.segments[0]

@@ -4,3 +4,4 @@ Day 18 - Turtle & the Graphical User Interface (GUI)
 Day 19 - Instances, State and Higher Order Functions
 Day 20 - Animation & Coordinates
 Day 21 - Inheritance & List Slicing
+Day 24 - Files, Directories and Paths
