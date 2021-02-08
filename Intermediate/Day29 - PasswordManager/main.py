@@ -38,7 +38,7 @@ def generate_password():
     pyperclip.paste()
 
 
-# ---------------------------- SAVE PASSWORD ------------------------------- #
+# ---------------------------- SEARCH ------------------------------- #
 
 def show_nothing_found_message():
     messagebox.showinfo(title="Opps", message="Nothing Found. ")
