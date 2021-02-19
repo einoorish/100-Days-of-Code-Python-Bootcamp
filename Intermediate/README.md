@@ -8,6 +8,6 @@ Day 24 - Files, Directories and Paths\
 Day 25 - Working with CSV Data and the Pandas Library\
 Day 26 - List and Dictionary Comprehension\
 Day 27 - Tkinter, *args, **kwargs and Creating GUI Programs\: Day 28 - Tkinter, Dynamic Typing\
-Day 30 - Errors, Exceptions and JSON Data
-Day 32 - Send Email (smtplib) & Manage Dates (datetime)
+Day 30 - Errors, Exceptions and JSON Data\
+Day 32 - Send Email (smtplib) & Manage Dates (datetime)\
 Day 33 - API Endpoints & API Parameters
